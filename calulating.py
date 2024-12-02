@@ -1,4 +1,5 @@
 import Arithmatics
+import stringHandling
 
 
 #symbolising binary operations
@@ -52,7 +53,35 @@ UNARY_OPERATIONS ={
    TANGENT_SYMBOL:Arithmatics.tangent,
  }
 
-print(UNARY_OPERATIONS['~'](12345))
-print(BINARY_OPERATIONS['*'](5,4))
+def formatingAndValidatingInput(inputString):
+    """
+    transforms a string into a list of operands and number 
+    for the sake of handling calculations
+   while maintaining order and ensuring valid inputs only.
+
+    Args:
+        inputString(string):a string containing the user's input
+    Returns:
+        the string seperated into a list of operands and numbers
+    Raises:
+        value error:in case the input contained values which arent a number nor a recognized operand
+    """
+    transformed = stringHandling.extract_numbers_and_symbols(inputString)
+    
+    if any(
+        item not in UNARY_OPERATIONS and 
+        item not in BINARY_OPERATIONS and 
+        not isinstance(item, (int, float)) 
+        for item in transformed
+    ):
+        raise ValueError("Make sure your input is composed of exclusively valid inputs")
+    
+    return transformed
+
+print(UNARY_OPERATIONS['Q'](stringHandling.DeriveNumberFromString("144")))
+print(BINARY_OPERATIONS['@'](5,4))
+input_string = str(input("Enter a calculation with a space after each number and operand: "))  # Fixed the syntax here
+formatted_input = formatingAndValidatingInput(input_string)
+print(formatted_input)
 
 
