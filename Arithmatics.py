@@ -14,12 +14,56 @@ def factorial(num):
     Raises:
         ValueError: If the input is a negative number.
     """
-    if num < 0:
+    if num < 0 or type(num)!=int:
         raise ValueError("Attempted to factorialize a non-integer.")
     if num == 0:
         return 1
     return num * factorial(num - 1)
 
+def digitSum(num):
+    """
+    Returns the sum of the digits of a given number,repeat5ed until reduced to a digit.
+    
+    Args:
+        num (float): The number to sum.
+        
+    Returns:
+      int: A single-digit integer obtained by repeatedly summing the digits of the input number..
+     """
+    num_str = str(num).replace('.', '')
+    num = sum(int(digit) for digit in num_str)
+    while num >= 10:
+        num = sum(int(digit) for digit in str(num))
+    
+    return num
+
+def taylorLn(x):
+    """
+    Approximates ln(x) using a Taylor series expansion.
+
+    Args:
+        x (float): The number to compute the natural logarithm for (x > 0).
+        
+    Returns:
+        float: The approximate value of ln(x).
+        
+    Raises:
+        ValueError: If x <= 0 since ln(x) is undefined for non-positive values.
+    """
+    if x <= 0:
+        raise ValueError("ln(x) is undefined for x <= 0")
+    
+    # Transformation to improve convergence
+    numerator = (x - 1)
+    denominator = (x + 1)
+    fraction = numerator / denominator
+
+    total = 0
+    for n in range(TAYLOR_SERIES_REPETITIONS):
+        term = (1 / (2 * n + 1)) * (fraction ** (2 * n + 1))
+        total += term
+
+    return 2 * total
 
 def taylorSine(num):
     """
