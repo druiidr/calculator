@@ -1,6 +1,6 @@
 import Arithmatics
 import stringHandling
-
+import Manual
 # Symbolizing binary operations
 ADDITION_SYMBOL = '+'
 SUBTRACTION_SYMBOL = '-'
@@ -32,9 +32,11 @@ BINARY_OPERATIONS = {
 # Symbolizing unary operations
 NEGATION_SYMBOL = '~'
 FACTORIAL_SYMBOL = '!'
+SUMMING_DIGIT_SYMBOL='#'
 SQUARE_ROOT_SYMBOL = 'Q'
 SINE_SYMBOL = 'S'
 COSINE_SYMBOL = 'C'
+NATURAL_LOGARITHM_SYMBOL = 'L'
 TANGENT_SYMBOL = 'T'
 
 """
@@ -49,33 +51,41 @@ UNARY_OPERATIONS = {
    SINE_SYMBOL: Arithmatics.taylorSine,
    COSINE_SYMBOL: Arithmatics.taylorCosine,
    TANGENT_SYMBOL: Arithmatics.tangent,
+   SUMMING_DIGIT_SYMBOL:Arithmatics.digitSum,
+   NATURAL_LOGARITHM_SYMBOL:Arithmatics.taylorLn,
 }
 
 def formatingAndValidatingInput(inputString):
     """
-    Transforms a string into a list of operands and numbers
-    for the sake of handling calculations while maintaining
-    order and ensuring valid inputs only.
+    Parses and validates input, handling negative numbers and unary operators generically.
 
     Args:
-        inputString (string): A string containing the user's input
+        inputString (str): The user's input expression.
     Returns:
-        The string separated into a list of operands and numbers
+        list: A list of tokens (numbers and operators).
     Raises:
-        ValueError: In case the input contains values which aren't
-        a number nor a recognized operand.
+        ValueError: If input contains invalid tokens.
     """
-    transformed = stringHandling.extract_numbers_and_symbols(inputString)
-    
+    tokens = stringHandling.extract_numbers_and_symbols(inputString)  # Tokenize input
+    result = []
+    for i, token in enumerate(tokens):
+        # Handle unary negation for numbers (e.g., `-4`)
+        if token == '-' and (i == 0 or tokens[i - 1] in BINARY_OPERATIONS or tokens[i - 1] == '('):
+            result.append('~')  # Replace '-' with unary negation symbol
+        else:
+            result.append(token)
+
+    # Validate tokens
     if any(
         item not in UNARY_OPERATIONS and 
         item not in BINARY_OPERATIONS and 
-        not isinstance(item, (int, float)) 
-        for item in transformed
+        item != '(' and item != ')' and
+        not isinstance(item, (int, float))
+        for item in result
     ):
-        raise ValueError("Make sure your input is composed of exclusively valid inputs")
-    
-    return transformed
+        raise ValueError("Invalid input: Only numbers, operators, and parentheses are allowed.")
+
+    return result
 
 def toReversePolish(tokens):
     """
@@ -139,11 +149,17 @@ def evaluateReversePolish(rpn_tokens):
             stack.append(UNARY_OPERATIONS[token](a))
     return stack.pop()
 
-# Example Usage
+
 if __name__ == "__main__":
-    input_string = input("Enter a calculation with a space after each number and operand: ")
-    formatted_input = formatingAndValidatingInput(input_string)
-    rpn_expression = toReversePolish(formatted_input)
-    result = evaluateReversePolish(rpn_expression)
-    print(f"Result: {result}")
+    input_string =""
+    while(input_string!="QUIT"):
+        input_string = input("Enter a calculation with a space after each number and operand,type HELP for the manual, or QUIT to exit: \n\n")
+        if input_string == "HELP":
+            print(Manual.MANUAL)
+        else:
+            formatted_input = formatingAndValidatingInput(input_string)
+            rpn_expression = toReversePolish(formatted_input)
+            result = evaluateReversePolish(rpn_expression)
+            print(f"\n\nResult: {result}\n\n")
+    print(f"thank you!!!")
 
