@@ -7,12 +7,16 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:calulating.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\gguyl\\source\\repos\\druiidr\\calculator\\stringHandling.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:stringHandling.py||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\gguyl\\Source\\Repos\\druiidr\\calculator\\Arithmatics.py||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Arithmatics.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\gguyl\\source\\repos\\druiidr\\calculator\\Manual.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Manual.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\gguyl\\source\\repos\\druiidr\\calculator\\stringHandling.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:stringHandling.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,17 +26,30 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "Manual.py",
+              "DocumentMoniker": "C:\\Users\\gguyl\\source\\repos\\druiidr\\calculator\\Manual.py",
+              "RelativeDocumentMoniker": "Manual.py",
+              "ToolTip": "C:\\Users\\gguyl\\source\\repos\\druiidr\\calculator\\Manual.py",
+              "RelativeToolTip": "Manual.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2024-12-15T13:55:00.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "stringHandling.py",
               "DocumentMoniker": "C:\\Users\\gguyl\\source\\repos\\druiidr\\calculator\\stringHandling.py",
               "RelativeDocumentMoniker": "stringHandling.py",
               "ToolTip": "C:\\Users\\gguyl\\source\\repos\\druiidr\\calculator\\stringHandling.py",
               "RelativeToolTip": "stringHandling.py",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAwBUAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAADQAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
               "WhenOpened": "2024-12-02T10:12:51.405Z",
               "EditorCaption": ""
@@ -45,20 +62,20 @@
               "RelativeDocumentMoniker": "calulating.py",
               "ToolTip": "C:\\Users\\gguyl\\source\\repos\\druiidr\\calculator\\calulating.py",
               "RelativeToolTip": "calulating.py",
-              "ViewState": "AgIAAEsAAABAMf8U3jEnwFIAAABYAAAAAAAAAA==",
+              "ViewState": "AgIAAIsAAAAAAAAAAAAUwI0AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
               "WhenOpened": "2024-12-01T20:50:12.122Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Arithmatics.py",
               "DocumentMoniker": "C:\\Users\\gguyl\\source\\repos\\druiidr\\calculator\\Arithmatics.py",
               "RelativeDocumentMoniker": "Arithmatics.py",
               "ToolTip": "C:\\Users\\gguyl\\source\\repos\\druiidr\\calculator\\Arithmatics.py",
               "RelativeToolTip": "Arithmatics.py",
-              "ViewState": "AgIAAIwAAAAAAAAAAAAAwKwAAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
               "WhenOpened": "2024-11-27T14:27:03.458Z",
               "EditorCaption": ""

@@ -34,16 +34,14 @@ def DeriveNumberFromString(strng):
 
 def extract_numbers_and_symbols(strng):
     """
-    Extracts all numbers and non-digit symbols (excluding white spaces) from a string, 
+    Extracts all numbers and non-digit symbols (excluding white spaces) from a string,
     treating each character as a separate string except for numbers, which are parsed as integers or floats.
     
     Args:
         strng (string): The input string containing numbers and symbols.
         
     Returns:
-        list: A list containing each character as a separate string, 
-              with numbers parsed as int or float where applicable, 
-              and excluding white spaces.
+        list: A list containing numbers as int/float and symbols as individual strings.
     """
     numbers_and_symbols = []
     temp_str = ""
@@ -51,17 +49,16 @@ def extract_numbers_and_symbols(strng):
     for char in strng:
         if char.isdigit() or (char == '.' and temp_str and temp_str[-1].isdigit()):
             temp_str += char
-        elif temp_str:
-            numbers_and_symbols.append(DeriveNumberFromString(temp_str))
-            temp_str = ""
-        elif char not in WHITE_CHARACTERS:
-            numbers_and_symbols.append(char)
+        else:
+            if temp_str: 
+                numbers_and_symbols.append(DeriveNumberFromString(temp_str))
+                temp_str = ""
+            if char not in WHITE_CHARACTERS:  
+                numbers_and_symbols.append(char)
 
-    if temp_str:
+    if temp_str:  
         numbers_and_symbols.append(DeriveNumberFromString(temp_str))
 
     return numbers_and_symbols
-
-
 
 

@@ -1,4 +1,4 @@
-﻿TAYLOR_SERIES_REPETITIONS=20
+﻿TAYLOR_SERIES_REPETITIONS=30
 
 
 def factorial(num):
@@ -203,15 +203,15 @@ def division(firstOperand, secondOperand):
         secondOperand (float): The denominator.
         
     Returns:
-        float: The result of the division.
-        
-    Raises:
-        ZeroDivisionError: If the secondOperand is 0.
+        float: The result of the division, or None if an error occurs.
+         catches:
+        ZeroDivisionError: If the second Operand is 0.
     """
-    if secondOperand == 0:
-        raise ZeroDivisionError("Attempted division by 0.")
-    return firstOperand / secondOperand
-
+    try:
+        return firstOperand / secondOperand
+    except ZeroDivisionError:
+        print("Error: Division by zero is undefined.")
+        return
 
 def power(firstOperand, secondOperand):
     """
@@ -252,7 +252,7 @@ def minimal(firstOperand, secondOperand):
     Returns:
         float: The smaller of the two numbers.
     """
-    return 0 - maximal(0 - firstOperand, 0 - secondOperand)
+    return firstOperand if firstOperand < secondOperand else secondOperand
 
 
 def module(firstOperand, secondOperand):
@@ -266,9 +266,11 @@ def module(firstOperand, secondOperand):
     Returns:
         int: The remainder of the division.
         
-    Raises:
+    catches:
         ZeroDivisionError: If the secondOperand is 0.
     """
-    if secondOperand == 0:
-        raise ZeroDivisionError("Attempted division by 0.")
-    return firstOperand % secondOperand
+    try:
+        return firstOperand % secondOperand
+    except ZeroDivisionError:
+      print("Error: module zero is undefined.")
+      return NULL

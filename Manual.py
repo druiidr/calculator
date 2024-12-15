@@ -1,9 +1,9 @@
 MANUAL = """
-Welcome to the Arithmetic Calculator! Below is a detailed guide to help you use this tool effectively.
+Welcome to Guy's Arithmetic Calculator! Below is a detailed guide to help you use this tool effectively.
 
 ---
 **General Usage:**
-- Enter a calculation as a single line with **spaces separating all numbers and operators**.
+- Enter a calculation as a single line.
 - For example: `3 + 5 * ( 2 - 4 )`
 - To exit the program, type: `QUIT`
 - To see this manual again, type: `HELP`
@@ -37,7 +37,6 @@ Welcome to the Arithmetic Calculator! Below is a detailed guide to help you use 
 **Input Rules:**
 - Use parentheses `(` and `)` to define precedence.
 - Unary operators like `~` (negation) apply to the number or expression immediately following them.
-- All numbers and operators must be separated by a **space**.
 
 ---
 **Examples:**
@@ -88,5 +87,5 @@ Welcome to the Arithmetic Calculator! Below is a detailed guide to help you use 
         - - Division by zero is attempted.
         - - taking a logarithm of a non positive is attempted.
 
-Thank you for using the Arithmetic Calculator! Type `HELP` anytime to see this guide again.
+Thank you for using Guy's Arithmetic Calculator! Type `HELP` anytime to see this guide again.
 """
