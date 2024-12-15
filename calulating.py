@@ -156,6 +156,8 @@ if __name__ == "__main__":
         input_string = input("Enter a calculation with a space after each number and operand,type HELP for the manual, or QUIT to exit: \n\n")
         if input_string == "HELP":
             print(Manual.MANUAL)
+        elif input_string=="QUIT":
+            break
         else:
             formatted_input = formatingAndValidatingInput(input_string)
             rpn_expression = toReversePolish(formatted_input)
