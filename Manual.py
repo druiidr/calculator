@@ -35,7 +35,7 @@ Welcome to Guy's Arithmetic Calculator! Below is a detailed guide to help you us
 
 ---
 **Input Rules:**
-- Use parentheses `(` and `)` to define precedence.
+- Use parentheses `(` and `)` to define precedence as needed.
 - Unary operators like `~` (negation) apply to the number or expression immediately following them.
 
 ---

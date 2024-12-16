@@ -22,18 +22,16 @@ def factorial(num):
 
 def digitSum(num):
     """
-    Returns the sum of the digits of a given number,repeat5ed until reduced to a digit.
+    Returns the sum of the digits of a given number.
     
     Args:
         num (float): The number to sum.
         
     Returns:
-      int: A single-digit integer obtained by repeatedly summing the digits of the input number..
+      int: sum of the digits of the input number..
      """
     num_str = str(num).replace('.', '')
     num = sum(int(digit) for digit in num_str)
-    while num >= 10:
-        num = sum(int(digit) for digit in str(num))
     
     return num
 
@@ -59,7 +57,7 @@ def taylorLn(x):
     fraction = numerator / denominator
 
     total = 0
-    for n in range(TAYLOR_SERIES_REPETITIONS):
+    for n in range(2*TAYLOR_SERIES_REPETITIONS):
         term = (1 / (2 * n + 1)) * (fraction ** (2 * n + 1))
         total += term
 

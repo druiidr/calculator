@@ -96,23 +96,34 @@ def toReversePolish(tokens):
     output = []
     operators = []
     try:
-        for token in tokens:
-            if isinstance(token, (int, float)):  # Numbers
+        for i, token in enumerate(tokens):
+            # Append numbers directly to the output queue
+            if isinstance(token, (int, float)):
                 output.append(token)
-            elif token in BINARY_OPERATIONS:  # Binary operators
+                # Handle immediate evaluation of unary operators after numbers
+                while operators and operators[-1] in UNARY_OPERATIONS and operators[-1] != FACTORIAL_SYMBOL:
+                    output.append(operators.pop())
+            # Unary operators are pushed onto the stack
+            elif token in UNARY_OPERATIONS:
+                if token == FACTORIAL_SYMBOL:
+                    output.append(token)  # Factorial works on the previous operand
+                else:
+                    operators.append(token)
+            # Binary operators require precedence checks
+            elif token in BINARY_OPERATIONS:
                 while (operators and operators[-1] in precedence and
-                        (precedence[operators[-1]] > precedence[token] or
-                         (precedence[operators[-1]] == precedence[token] and token not in right_associative))):
+                       (precedence[operators[-1]] > precedence[token] or
+                        (precedence[operators[-1]] == precedence[token] and token not in right_associative))):
                     output.append(operators.pop())
                 operators.append(token)
-            elif token in UNARY_OPERATIONS:  # Unary operators
-                operators.append(token)
+            # Handle parentheses
             elif token == '(':
                 operators.append(token)
             elif token == ')':
                 while operators and operators[-1] != '(':
                     output.append(operators.pop())
                 operators.pop()  # Remove the '(' from stack
+        # Pop remaining operators
         while operators:
             output.append(operators.pop())
         return output
@@ -132,13 +143,16 @@ def evaluateReversePolish(rpn_tokens):
     stack = []
     try:
         for token in rpn_tokens:
-            if isinstance(token, (int, float)):  # Numbers
+            # Numbers are pushed onto the stack
+            if isinstance(token, (int, float)):
                 stack.append(token)
-            elif token in BINARY_OPERATIONS:  # Binary operators
+            # Binary operations pop two operands and apply the operation
+            elif token in BINARY_OPERATIONS:
                 b = stack.pop()
                 a = stack.pop()
                 stack.append(BINARY_OPERATIONS[token](a, b))
-            elif token in UNARY_OPERATIONS:  # Unary operators
+            # Unary operations pop one operand and apply the operation
+            elif token in UNARY_OPERATIONS:
                 a = stack.pop()
                 stack.append(UNARY_OPERATIONS[token](a))
         return stack.pop()
@@ -163,5 +177,7 @@ if __name__ == "__main__":
                 rpn_expression = toReversePolish(formatted_input)
                 if rpn_expression is not None:
                     result = evaluateReversePolish(rpn_expression)
+                    print(formatted_input)
+                    print(rpn_expression)
                     print(f"\n\nResult: {result}\n\n")
     print("Thank you!")
