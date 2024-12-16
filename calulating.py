@@ -177,7 +177,8 @@ if __name__ == "__main__":
                 rpn_expression = toReversePolish(formatted_input)
                 if rpn_expression is not None:
                     result = evaluateReversePolish(rpn_expression)
-                    print(formatted_input)
-                    print(rpn_expression)
+                    # debug
+                    # print(formatted_input)
+                    # print(rpn_expression)
                     print(f"\n\nResult: {result}\n\n")
     print("Thank you!")
