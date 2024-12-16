@@ -68,24 +68,33 @@ def formatingAndValidatingInput(inputString):
     try:
         tokens = stringHandling.extract_numbers_and_symbols(inputString)  # Tokenize input
         result = []
+        
         for i, token in enumerate(tokens):
             # Handle unary negation for numbers (e.g., `-4`)
             if token == '-' and (i == 0 or tokens[i - 1] in BINARY_OPERATIONS or tokens[i - 1] == '('):
                 result.append('~')  # Replace '-' with unary negation symbol
-            elif(token in CONSTANTS):
-                result.append(CONSTANTS[token]) #Replace mathematical constant with its value
+            elif token in CONSTANTS:
+                result.append(CONSTANTS[token])  # Replace mathematical constant with its value
             else:
                 result.append(token)
 
         # Validate tokens
-        for item in result:
-            if (item not in UNARY_OPERATIONS and item not in BINARY_OPERATIONS \
-                    and item != '(' and item != ')' and not isinstance(item, (int, float))):
-                raise ValueError("Invalid input: Only numbers, operators,recognised constants and parentheses are allowed.")
+        for i, item in enumerate(result):
+            if item not in UNARY_OPERATIONS and item not in BINARY_OPERATIONS \
+                    and item != '(' and item != ')' and not isinstance(item, (int, float)):
+                raise ValueError(f"Invalid token: {item}")
+
+            # Check for consecutive operands without an operator
+            if ((i > 0 and isinstance(result[i - 1], (int, float)) and isinstance(item, (int, float))) or
+                (i > 0 and result[i - 1] in CONSTANTS.values() and item in CONSTANTS.values()) or
+                 (i > 0 and isinstance(result[i - 1], (int, float)) and item == '(')):
+             raise ValueError(f"Consecutive operands found: {result[i - 1]} and {item}") 
+        
         return result
     except Exception as e:
         print(f"Error during input validation: {e}")
         return None
+
 
 def toReversePolish(tokens):
     """
