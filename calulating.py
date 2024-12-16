@@ -1,4 +1,4 @@
-import Arithmatics
+import Arithmetics
 import stringHandling
 import Manual
 
@@ -15,15 +15,15 @@ AVERAGE_SYMBOL = '@'
 
 # Dictionary containing binary operations
 BINARY_OPERATIONS = {
-    ADDITION_SYMBOL: Arithmatics.addition,
-    AVERAGE_SYMBOL: Arithmatics.average,
-    DIVISION_SYMBOL: Arithmatics.division,
-    SUBTRACTION_SYMBOL: Arithmatics.subtraction,
-    MULTIPLICATION_SYMBOL: Arithmatics.multiplication,
-    POWER_SYMBOL: Arithmatics.power,
-    MODULU_SYMBOL: Arithmatics.module,
-    MAXIMUM_SYMBOL: Arithmatics.maximal,
-    MINIMUM_SYMBOL: Arithmatics.minimal
+    ADDITION_SYMBOL: Arithmetics.addition,
+    AVERAGE_SYMBOL: Arithmetics.average,
+    DIVISION_SYMBOL: Arithmetics.division,
+    SUBTRACTION_SYMBOL: Arithmetics.subtraction,
+    MULTIPLICATION_SYMBOL: Arithmetics.multiplication,
+    POWER_SYMBOL: Arithmetics.power,
+    MODULU_SYMBOL: Arithmetics.module,
+    MAXIMUM_SYMBOL: Arithmetics.maximal,
+    MINIMUM_SYMBOL: Arithmetics.minimal
 }
 
 # Symbolizing unary operations
@@ -38,15 +38,23 @@ TANGENT_SYMBOL = 'T'
 
 # Dictionary containing unary operations
 UNARY_OPERATIONS = {
-    NEGATION_SYMBOL: Arithmatics.negate,
-    FACTORIAL_SYMBOL: Arithmatics.factorial,
-    SQUARE_ROOT_SYMBOL: Arithmatics.squareroot,
-    SINE_SYMBOL: Arithmatics.taylorSine,
-    COSINE_SYMBOL: Arithmatics.taylorCosine,
-    TANGENT_SYMBOL: Arithmatics.tangent,
-    SUMMING_DIGIT_SYMBOL: Arithmatics.digitSum,
-    NATURAL_LOGARITHM_SYMBOL: Arithmatics.taylorLn,
+    NEGATION_SYMBOL: Arithmetics.negate,
+    FACTORIAL_SYMBOL: Arithmetics.factorial,
+    SQUARE_ROOT_SYMBOL: Arithmetics.squareroot,
+    SINE_SYMBOL: Arithmetics.taylorSine,
+    COSINE_SYMBOL: Arithmetics.taylorCosine,
+    TANGENT_SYMBOL: Arithmetics.tangent,
+    SUMMING_DIGIT_SYMBOL: Arithmetics.digitSum,
+    NATURAL_LOGARITHM_SYMBOL: Arithmetics.taylorLn,
 }
+# Symbolizing mathematical constants
+EULER_SYMBOL = 'e'
+PI_SYMBOL = 'p'
+
+#dictionary containing mathematical constants
+CONSTANTS ={
+    EULER_SYMBOL:Arithmetics.EULERS_CONSTANT,
+    PI_SYMBOL:Arithmetics.PI}
 
 def formatingAndValidatingInput(inputString):
     """
@@ -64,6 +72,8 @@ def formatingAndValidatingInput(inputString):
             # Handle unary negation for numbers (e.g., `-4`)
             if token == '-' and (i == 0 or tokens[i - 1] in BINARY_OPERATIONS or tokens[i - 1] == '('):
                 result.append('~')  # Replace '-' with unary negation symbol
+            elif(token in CONSTANTS):
+                result.append(CONSTANTS[token]) #Replace mathematical constant with its value
             else:
                 result.append(token)
 
@@ -71,7 +81,7 @@ def formatingAndValidatingInput(inputString):
         for item in result:
             if (item not in UNARY_OPERATIONS and item not in BINARY_OPERATIONS \
                     and item != '(' and item != ')' and not isinstance(item, (int, float))):
-                raise ValueError("Invalid input: Only numbers, operators, and parentheses are allowed.")
+                raise ValueError("Invalid input: Only numbers, operators,recognised constants and parentheses are allowed.")
         return result
     except Exception as e:
         print(f"Error during input validation: {e}")

@@ -33,6 +33,10 @@ Welcome to Guy's Arithmetic Calculator! Below is a detailed guide to help you us
    - Tangent (`T`): Computes an estimation of the tangent of a number (in radians).
    - Natural Logarithm ('L') Computes an estimation of the natural logarithm of a number
 
+4. **mathematical Constants**
+   - Euler's constant ('e'): the base of the natural logarithm (aprox:2.71828)
+   - pi ('p'): the ratio of a circle's circumference to its diameter (aprox:3.14159)
+
 ---
 **Input Rules:**
 - Use parentheses `(` and `)` to define precedence as needed.
@@ -61,7 +65,7 @@ Welcome to Guy's Arithmetic Calculator! Below is a detailed guide to help you us
    - Output: `120`
 
 6. **Sine of a Number:**
-   - Input: `S ( 3.14159 / 2 )`
+   - Input: `S ( p / 2 )`
    - Output: `1.0` (sine of pi/2 radians)
 
 7. **Combining Unary and Binary Operations:**

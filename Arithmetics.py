@@ -1,5 +1,6 @@
 ﻿TAYLOR_SERIES_REPETITIONS=30
-
+EULERS_CONSTANT=2.71828182845904
+PI=3.141592653589793238
 
 def factorial(num):
     """
@@ -14,11 +15,11 @@ def factorial(num):
     Raises:
         ValueError: If the input is a negative number.
     """
-    if num < 0 or type(num)!=int:
+    if num < 0 or num%1!=0:
         raise ValueError("Attempted to factorialize a non-integer.")
     if num == 0:
         return 1
-    return num * factorial(num - 1)
+    return float(num) * factorial(num - 1)
 
 def digitSum(num):
     """
