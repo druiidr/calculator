@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\gguyl\\source\\repos\\calculator\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\gguyl\\source\\repos\\calculator\\calulating.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:calulating.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\gguyl\\Source\\Repos\\calculator\\calculating.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:calculating.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\gguyl\\Source\\Repos\\calculator\\Arithmetics.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Arithmetics.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\gguyl\\source\\repos\\calculator\\stringHandling.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:stringHandling.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\gguyl\\source\\repos\\calculator\\Manual.py||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Manual.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\gguyl\\source\\repos\\calculator\\stringHandling.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:stringHandling.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\gguyl\\Source\\Repos\\calculator\\Arithmetics.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Arithmetics.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -36,20 +36,20 @@
               "RelativeDocumentMoniker": "Manual.py",
               "ToolTip": "C:\\Users\\gguyl\\source\\repos\\calculator\\Manual.py",
               "RelativeToolTip": "Manual.py",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAwwCUAAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAFgAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
               "WhenOpened": "2024-12-15T13:55:00.469Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "stringHandling.py",
               "DocumentMoniker": "C:\\Users\\gguyl\\source\\repos\\calculator\\stringHandling.py",
               "RelativeDocumentMoniker": "stringHandling.py",
               "ToolTip": "C:\\Users\\gguyl\\source\\repos\\calculator\\stringHandling.py",
               "RelativeToolTip": "stringHandling.py",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAqwDQAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAA4AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
               "WhenOpened": "2024-12-02T10:12:51.405Z",
               "EditorCaption": ""
@@ -57,19 +57,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "calulating.py",
-              "DocumentMoniker": "C:\\Users\\gguyl\\source\\repos\\calculator\\calulating.py",
-              "RelativeDocumentMoniker": "calulating.py",
-              "ToolTip": "C:\\Users\\gguyl\\source\\repos\\calculator\\calulating.py",
-              "RelativeToolTip": "calulating.py",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAACIAAAATAAAAAAAAAA==",
+              "Title": "calculating.py",
+              "DocumentMoniker": "C:\\Users\\gguyl\\Source\\Repos\\calculator\\calculating.py",
+              "RelativeDocumentMoniker": "calculating.py",
+              "ToolTip": "C:\\Users\\gguyl\\Source\\Repos\\calculator\\calculating.py",
+              "RelativeToolTip": "calculating.py",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAAAFsAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
               "WhenOpened": "2024-12-01T20:50:12.122Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Arithmetics.py",
               "DocumentMoniker": "C:\\Users\\gguyl\\Source\\Repos\\calculator\\Arithmetics.py",
               "RelativeDocumentMoniker": "Arithmetics.py",

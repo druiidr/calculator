@@ -86,6 +86,7 @@ Welcome to Guy's Arithmetic Calculator! Below is a detailed guide to help you us
 **Error Handling:**
 - The calculator will display an error message if:
   - Input contains invalid characters or unsupported operators.
+  - Input is improperly formatted
   - Parentheses are unbalanced.
   - arithmetic issues such as:
         - - Division by zero is attempted.

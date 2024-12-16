@@ -54,7 +54,8 @@ PI_SYMBOL = 'p'
 #dictionary containing mathematical constants
 CONSTANTS ={
     EULER_SYMBOL:Arithmetics.EULERS_CONSTANT,
-    PI_SYMBOL:Arithmetics.PI}
+    PI_SYMBOL:Arithmetics.PI
+    }
 
 def formatingAndValidatingInput(inputString):
     """
@@ -87,7 +88,8 @@ def formatingAndValidatingInput(inputString):
             # Check for consecutive operands without an operator
             if ((i > 0 and isinstance(result[i - 1], (int, float)) and isinstance(item, (int, float))) or
                 (i > 0 and result[i - 1] in CONSTANTS.values() and item in CONSTANTS.values()) or
-                 (i > 0 and isinstance(result[i - 1], (int, float)) and item == '(')):
+                (i > 0 and isinstance(result[i - 1], (int, float)) and item == '(') or
+                (i > 0 and result[i - 1] in BINARY_OPERATIONS and item == ')')):
              raise ValueError(f"Consecutive operands found: {result[i - 1]} and {item}") 
         
         return result

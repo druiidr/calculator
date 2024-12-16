@@ -1,4 +1,5 @@
-WHITE_CHARACTERS=[' ', '\n', '\t']
+WHITE_CHARACTERS = [' ', '\n', '\t']
+
 
 def DeriveNumberFromString(strng):
     """
@@ -8,9 +9,8 @@ def DeriveNumberFromString(strng):
         strng (string): A string containing digits.
         
     Returns:
-        float: The value of the number in the string.
+        float or int: The value of the number in the string.
     """
-
     number = ""
     hasDecimal = False
 
@@ -30,8 +30,6 @@ def DeriveNumberFromString(strng):
     else:
         raise ValueError("No numerical value found in the string.")
 
-
-
 def extract_numbers_and_symbols(strng):
     """
     Extracts all numbers and non-digit symbols (excluding white spaces) from a string,
@@ -45,20 +43,17 @@ def extract_numbers_and_symbols(strng):
     """
     numbers_and_symbols = []
     temp_str = ""
-
     for char in strng:
-        if char.isdigit() or (char == '.' and temp_str and temp_str[-1].isdigit()):
-            temp_str += char
+        if char.isdigit() or (char == '.' and temp_str and temp_str[-1].isdigit() and '.' not in temp_str):
+            temp_str += char  # Build the number
         else:
-            if temp_str: 
+            if temp_str:  # If a number string was being formed, append it
                 numbers_and_symbols.append(DeriveNumberFromString(temp_str))
                 temp_str = ""
-            if char not in WHITE_CHARACTERS:  
+            if char not in WHITE_CHARACTERS:  # Add symbols, skipping white characters
                 numbers_and_symbols.append(char)
 
-    if temp_str:  
+    if temp_str:  # Append the last number, if any
         numbers_and_symbols.append(DeriveNumberFromString(temp_str))
 
     return numbers_and_symbols
-
-
