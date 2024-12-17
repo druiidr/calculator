@@ -47,14 +47,18 @@ UNARY_OPERATIONS = {
     SUMMING_DIGIT_SYMBOL: Arithmetics.digitSum,
     NATURAL_LOGARITHM_SYMBOL: Arithmetics.taylorLn,
 }
+#list of all unary operators that need to come after their operand
+FOLLOWING_UNARY_OPERATIONS=[FACTORIAL_SYMBOL]
 # Symbolizing mathematical constants
 EULER_SYMBOL = 'e'
 PI_SYMBOL = 'p'
+PREVIOUS_ANSWER_SYMBOL = 'a'
 
 #dictionary containing mathematical constants
 CONSTANTS ={
     EULER_SYMBOL:Arithmetics.EULERS_CONSTANT,
-    PI_SYMBOL:Arithmetics.PI
+    PI_SYMBOL:Arithmetics.PI,
+    PREVIOUS_ANSWER_SYMBOL:None,
     }
 
 def formatingAndValidatingInput(inputString):
@@ -75,6 +79,8 @@ def formatingAndValidatingInput(inputString):
             if token == '-' and (i == 0 or tokens[i - 1] in BINARY_OPERATIONS or tokens[i - 1] == '('):
                 result.append('~')  # Replace '-' with unary negation symbol
             elif token in CONSTANTS:
+                if token== PREVIOUS_ANSWER_SYMBOL and CONSTANTS[token]==None:
+                    raise ValueError("your previous result is an invalid one. you cant use it!")
                 result.append(CONSTANTS[token])  # Replace mathematical constant with its value
             else:
                 result.append(token)
@@ -89,8 +95,10 @@ def formatingAndValidatingInput(inputString):
             if ((i > 0 and isinstance(result[i - 1], (int, float)) and isinstance(item, (int, float))) or
                 (i > 0 and result[i - 1] in CONSTANTS.values() and item in CONSTANTS.values()) or
                 (i > 0 and isinstance(result[i - 1], (int, float)) and item == '(') or
+                (i > 0 and (isinstance(result[i - 1], (int, float)) or result[i - 1]==')') and (item in UNARY_OPERATIONS and item not in FOLLOWING_UNARY_OPERATIONS)) or #handling improper use of unary operators
+                (i > 0 and result[i-1] in FOLLOWING_UNARY_OPERATIONS  and isinstance(item, (int, float)) ) or
                 (i > 0 and result[i - 1] in BINARY_OPERATIONS and item == ')')):
-             raise ValueError(f"Consecutive operands found: {result[i - 1]} and {item}") 
+             raise ValueError(f"improperly ordered items found: {result[i - 1]} and {item}") 
         
         return result
     except Exception as e:
@@ -198,6 +206,7 @@ if __name__ == "__main__":
                 rpn_expression = toReversePolish(formatted_input)
                 if rpn_expression is not None:
                     result = evaluateReversePolish(rpn_expression)
+                    CONSTANTS[PREVIOUS_ANSWER_SYMBOL]=result
                     # debug
                     # print(formatted_input)
                     # print(rpn_expression)

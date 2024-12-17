@@ -57,3 +57,6 @@ def extract_numbers_and_symbols(strng):
         numbers_and_symbols.append(DeriveNumberFromString(temp_str))
 
     return numbers_and_symbols
+
+if __name__ == "__main__":
+    print("you can't do calculations in this page! please go to calculating.py")

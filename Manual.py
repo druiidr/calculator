@@ -36,6 +36,7 @@ Welcome to Guy's Arithmetic Calculator! Below is a detailed guide to help you us
 4. **mathematical Constants**
    - Euler's constant ('e'): the base of the natural logarithm (aprox:2.71828)
    - pi ('p'): the ratio of a circle's circumference to its diameter (aprox:3.14159)
+   - previous answer('a'): contains the result of your last valid calculation
 
 ---
 **Input Rules:**
@@ -88,9 +89,12 @@ Welcome to Guy's Arithmetic Calculator! Below is a detailed guide to help you us
   - Input contains invalid characters or unsupported operators.
   - Input is improperly formatted
   - Parentheses are unbalanced.
+  -attempting to use the previous answer without one existing
   - arithmetic issues such as:
         - - Division by zero is attempted.
         - - taking a logarithm of a non positive is attempted.
 
 Thank you for using Guy's Arithmetic Calculator! Type `HELP` anytime to see this guide again.
 """
+if __name__ == "__main__":
+    print("you can't do calculations in this page! please go to calculating.py")

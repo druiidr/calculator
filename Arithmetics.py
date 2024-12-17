@@ -1,6 +1,7 @@
 ﻿TAYLOR_SERIES_REPETITIONS=30
-EULERS_CONSTANT=2.71828182845904
-PI=3.141592653589793238
+EULERS_CONSTANT=2.7182818284590452353602874713527 
+PI=3.141592653589793238462643383279502884197169
+LN_2 = 0.69314718056
 
 def factorial(num):
     """
@@ -49,20 +50,44 @@ def taylorLn(x):
     Raises:
         ValueError: If x <= 0 since ln(x) is undefined for non-positive values.
     """
+
+def taylorLn(x):
+    """
+    Approximates ln(x) using a Taylor series expansion with manual range reduction.
+
+    Args:
+        x (float): The number to compute the natural logarithm for (x > 0).
+
+    Returns:
+        float: The approximate value of ln(x).
+
+    Raises:
+        ValueError: If x <= 0 since ln(x) is undefined for non-positive values.
+    """
     if x <= 0:
         raise ValueError("ln(x) is undefined for x <= 0")
-    
-    # Transformation to improve convergence
+
+    # Step 1: Range reduction
+    k = 0
+    while x >= 2: 
+        x /= 2
+        k += 1
+    while x < 1:
+        x *= 2
+        k -= 1
+
+    # Step 2: Compute ln(x) for x in [1, 2) using the Taylor series
     numerator = (x - 1)
     denominator = (x + 1)
     fraction = numerator / denominator
 
     total = 0
-    for n in range(2*TAYLOR_SERIES_REPETITIONS):
+    for n in range(TAYLOR_SERIES_REPETITIONS):
         term = (1 / (2 * n + 1)) * (fraction ** (2 * n + 1))
-        total += term
+        total += 2*term
 
-    return 2 * total
+    # Step 3: Combine results using 
+    return k * LN_2 + total
 
 def taylorSine(num):
     """
@@ -272,4 +297,8 @@ def module(firstOperand, secondOperand):
         return firstOperand % secondOperand
     except ZeroDivisionError:
       print("Error: module zero is undefined.")
-      return NULL
+      return None
+
+
+if __name__ == "__main__":
+    print("you can't do calculations in this page! please go to calculating.py")
