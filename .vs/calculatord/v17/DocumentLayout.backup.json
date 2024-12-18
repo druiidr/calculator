@@ -11,12 +11,16 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Arithmetics.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\gguyl\\source\\repos\\calculatord\\stringHandling.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:stringHandling.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\gguyl\\source\\repos\\calculatord\\BTSUniter.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BTSUniter.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\gguyl\\source\\repos\\calculatord\\Manual.py||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Manual.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\gguyl\\source\\repos\\calculatord\\stringHandling.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:stringHandling.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\gguyl\\source\\repos\\calculatord\\README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
@@ -30,20 +34,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "BTSUniter.py",
+              "DocumentMoniker": "C:\\Users\\gguyl\\source\\repos\\calculatord\\BTSUniter.py",
+              "RelativeDocumentMoniker": "BTSUniter.py",
+              "ToolTip": "C:\\Users\\gguyl\\source\\repos\\calculatord\\BTSUniter.py",
+              "RelativeToolTip": "BTSUniter.py",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAqwCQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2024-12-17T18:56:19.374Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "stringHandling.py",
               "DocumentMoniker": "C:\\Users\\gguyl\\source\\repos\\calculatord\\stringHandling.py",
               "RelativeDocumentMoniker": "stringHandling.py",
               "ToolTip": "C:\\Users\\gguyl\\source\\repos\\calculatord\\stringHandling.py",
               "RelativeToolTip": "stringHandling.py",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAAD0AAABQAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2024-12-17T13:32:06.608Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-17T13:32:06.608Z"
             },
             {
               "$type": "Document",
@@ -53,14 +69,14 @@
               "RelativeDocumentMoniker": "Manual.py",
               "ToolTip": "C:\\Users\\gguyl\\source\\repos\\calculatord\\Manual.py",
               "RelativeToolTip": "Manual.py",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAAAGMAAABQAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA0AAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
               "WhenOpened": "2024-12-17T13:00:10.057Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "README.md",
               "DocumentMoniker": "C:\\Users\\gguyl\\source\\repos\\calculatord\\README.md",
               "RelativeDocumentMoniker": "README.md",
@@ -68,8 +84,7 @@
               "RelativeToolTip": "README.md",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2024-12-17T12:30:01.386Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-17T12:30:01.386Z"
             },
             {
               "$type": "Document",
@@ -79,7 +94,7 @@
               "RelativeDocumentMoniker": "Arithmetics.py",
               "ToolTip": "C:\\Users\\gguyl\\source\\repos\\calculatord\\Arithmetics.py",
               "RelativeToolTip": "Arithmetics.py",
-              "ViewState": "AgIAABoBAAAAAAAAAADwvysBAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAqwFYAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
               "WhenOpened": "2024-12-17T12:07:16.632Z",
               "EditorCaption": ""
@@ -92,7 +107,7 @@
               "RelativeDocumentMoniker": "calculating.py",
               "ToolTip": "C:\\Users\\gguyl\\source\\repos\\calculatord\\calculating.py",
               "RelativeToolTip": "calculating.py",
-              "ViewState": "AgIAAHUAAAAAAAAAAAAAAMIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAswB4AAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
               "WhenOpened": "2024-12-17T12:06:25.488Z",
               "EditorCaption": ""

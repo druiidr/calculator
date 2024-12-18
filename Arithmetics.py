@@ -1,7 +1,10 @@
-﻿TAYLOR_SERIES_REPETITIONS=30
+﻿TAYLOR_SERIES_REPETITIONS=50
 EULERS_CONSTANT=2.7182818284590452353602874713527 
 PI=3.141592653589793238462643383279502884197169
 LN_2 = 0.69314718056
+TRIGONOMETRIC_ACCURACY_EDGE=2*PI
+ESTIMATIONS_MAX_EXPECTED_ACCURACY_FACTOR=100000000
+
 
 def factorial(num):
     """
@@ -33,23 +36,11 @@ def digitSum(num):
       int: sum of the digits of the input number..
      """
     num_str = str(num).replace('.', '')
+    if('e' in num_str):
+        raise ValueError("can only sum digits for decimal numbers outside the bounds of float")
     num = sum(int(digit) for digit in num_str)
     
     return num
-
-def taylorLn(x):
-    """
-    Approximates ln(x) using a Taylor series expansion.
-
-    Args:
-        x (float): The number to compute the natural logarithm for (x > 0).
-        
-    Returns:
-        float: The approximate value of ln(x).
-        
-    Raises:
-        ValueError: If x <= 0 since ln(x) is undefined for non-positive values.
-    """
 
 def taylorLn(x):
     """
@@ -67,7 +58,7 @@ def taylorLn(x):
     if x <= 0:
         raise ValueError("ln(x) is undefined for x <= 0")
 
-    # Step 1: Range reduction
+    # Range reduction
     k = 0
     while x >= 2: 
         x /= 2
@@ -76,7 +67,7 @@ def taylorLn(x):
         x *= 2
         k -= 1
 
-    # Step 2: Compute ln(x) for x in [1, 2) using the Taylor series
+    # Compute ln(x) for x in [1, 2) using the Taylor series
     numerator = (x - 1)
     denominator = (x + 1)
     fraction = numerator / denominator
@@ -86,8 +77,26 @@ def taylorLn(x):
         term = (1 / (2 * n + 1)) * (fraction ** (2 * n + 1))
         total += 2*term
 
-    # Step 3: Combine results using 
-    return k * LN_2 + total
+    # Combine results using 
+    formatted=int(ESTIMATIONS_MAX_EXPECTED_ACCURACY_FACTOR*(k * LN_2 + total))
+    return formatted/ESTIMATIONS_MAX_EXPECTED_ACCURACY_FACTOR
+
+def rangeReductionForTrig(num):
+    """
+    reduces the value of num while maintaining sin(num) and cos(num)
+    to ensure proper estimation. based on sin(a)=sin(180-a)
+    
+    Args:
+        num (float): The angle in radians.
+        
+    Returns:
+        the comparable value to num within the computable range
+    """
+    num = num % (2 * PI)
+    return num - (2 * PI) if num > PI else num
+
+
+
 
 def taylorSine(num):
     """
@@ -99,11 +108,13 @@ def taylorSine(num):
     Returns:
         float: The approximate value of sin(x).
     """
+    num=rangeReductionForTrig(num)
     total = 0
     for i in range(TAYLOR_SERIES_REPETITIONS):
         term = ((-1)**i * num**(2 * i + 1)) / factorial(2 * i + 1)
         total += term
-    return total
+    total=int(total*ESTIMATIONS_MAX_EXPECTED_ACCURACY_FACTOR)
+    return total/ESTIMATIONS_MAX_EXPECTED_ACCURACY_FACTOR
 
 
 def taylorCosine(num):
@@ -116,11 +127,13 @@ def taylorCosine(num):
     Returns:
         float: The approximate value of cos(x).
     """
+    num=rangeReductionForTrig(num)
     total = 0
     for i in range(TAYLOR_SERIES_REPETITIONS):
         term = ((-1)**i * num**(2 * i)) / factorial(2 * i)
         total += term
-    return total
+    total=int(total*ESTIMATIONS_MAX_EXPECTED_ACCURACY_FACTOR)
+    return total/ESTIMATIONS_MAX_EXPECTED_ACCURACY_FACTOR
 
 
 def tangent(num):
