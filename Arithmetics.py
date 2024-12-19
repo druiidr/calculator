@@ -1,4 +1,4 @@
-﻿TAYLOR_SERIES_REPETITIONS=50
+﻿TAYLOR_SERIES_REPETITIONS=10
 EULERS_CONSTANT=2.7182818284590452353602874713527 
 PI=3.141592653589793238462643383279502884197169
 LN_2 = 0.69314718056
@@ -59,14 +59,13 @@ def taylorLn(x):
         raise ValueError("ln(x) is undefined for x <= 0")
 
     # Range reduction
-    k = 0
+    multConstant = 0
     while x >= 2: 
         x /= 2
-        k += 1
+        multConstant += 1
     while x < 1:
         x *= 2
-        k -= 1
-
+        multConstant -= 1
     # Compute ln(x) for x in [1, 2) using the Taylor series
     numerator = (x - 1)
     denominator = (x + 1)
@@ -78,7 +77,7 @@ def taylorLn(x):
         total += 2*term
 
     # Combine results using 
-    formatted=int(ESTIMATIONS_MAX_EXPECTED_ACCURACY_FACTOR*(k * LN_2 + total))
+    formatted=int(ESTIMATIONS_MAX_EXPECTED_ACCURACY_FACTOR*(multConstant * LN_2 + total))
     return formatted/ESTIMATIONS_MAX_EXPECTED_ACCURACY_FACTOR
 
 def rangeReductionForTrig(num):

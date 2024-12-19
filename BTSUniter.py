@@ -209,3 +209,5 @@ def evaluateReversePolish(rpn_tokens):
     except Exception as e:
         print(f"Error during evaluation: {e}")
         return None
+if __name__ == "__main__":
+    print("you can't do calculations in this page! please go to calculating.py")

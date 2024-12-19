@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\__pycache__"
   ],
-  "SelectedNode": "\\C:\\Users\\gguyl\\Source\\Repos\\calculatord",
+  "SelectedNode": "\\calculating.py",
   "PreviewInSolutionExplorer": false
 }

@@ -32,6 +32,8 @@ def run_calculator():
                     #debug commands end
                     print(f"\n\nResult: {result}\n\n")
     print("Thank you!")
+
+
 if __name__ == "__main__":
     run_calculator()
 
