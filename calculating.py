@@ -26,9 +26,10 @@ def run_calculator():
                 if rpn_expression is not None:  
                     result = BTSUniter.evaluateReversePolish(rpn_expression)
                     BTSUniter.CONSTANTS[BTSUniter.PREVIOUS_ANSWER_SYMBOL]=result
-                    # debug commands. unable them if you want, but they are by any means not required for proper execution
+                    # debug and test commands. enable them if you want, but they are by any means not required for proper execution outside the parameters of tests and debug
                     #print(formatted_input)
                     #print(rpn_expression)
+                    #return result
                     #debug commands end
                     print(f"\n\nResult: {result}\n\n")
     print("Thank you!")
