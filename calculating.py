@@ -10,14 +10,18 @@ def run_calculator():
     Args:
         none
     Returns:
-        none
+        none(unless in debug mode, when it returns the answer)
+    cathces:
+        EOF exceptions, KeyboardInterupt
     """
     input_string = ""
     while input_string.lower() != QUIT_MESSEGE.lower():
         try:
             input_string = input("Enter a calculation, type HELP for the manual, or QUIT to exit: \n\n")
         except KeyboardInterrupt:
-            print("invalid input")
+            print("ctrl c is not an arithmetic statement!")
+        except EOFError:
+            print("out of bounds buddy")
         if input_string.lower() == HELP_MESSEGE.lower():
             print(Manual.MANUAL)
         elif input_string.lower() == QUIT_MESSEGE.lower():
