@@ -41,7 +41,8 @@ Welcome to Guy's Arithmetic Calculator! Below is a detailed guide to help you us
 ---
 **Input Rules:**
 - Use parentheses `(` and `)` to define precedence as needed.
-- Unary operators like `~` (negation) apply to the number or expression immediately following them.
+- Unary operators like `!` (Factorial) and '#' (sum of digits) apply to the number or expression
+    immediately before them.(ex: X!,XYZ#) the rest apply to the one that follows them(ex: ~X,L(Y^2))
 
 ---
 **Examples:**
@@ -89,10 +90,11 @@ Welcome to Guy's Arithmetic Calculator! Below is a detailed guide to help you us
   - Input contains invalid characters or unsupported operators.
   - Input is improperly formatted
   - Parentheses are unbalanced.
-  -attempting to use the previous answer without one existing
+  -attempting to use the previous answer without a valid one existing
   - arithmetic issues such as:
         - - Division by zero is attempted.
         - - taking a logarithm of a non positive is attempted.
+        - - ect
 
 Thank you for using Guy's Arithmetic Calculator! Type `HELP` anytime to see this guide again.
 """
