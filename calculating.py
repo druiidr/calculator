@@ -14,7 +14,10 @@ def run_calculator():
     """
     input_string = ""
     while input_string.lower() != QUIT_MESSEGE.lower():
-        input_string = input("Enter a calculation, type HELP for the manual, or QUIT to exit: \n\n")
+        try:
+            input_string = input("Enter a calculation, type HELP for the manual, or QUIT to exit: \n\n")
+        except KeyboardInterrupt:
+            print("invalid input")
         if input_string.lower() == HELP_MESSEGE.lower():
             print(Manual.MANUAL)
         elif input_string.lower() == QUIT_MESSEGE.lower():
