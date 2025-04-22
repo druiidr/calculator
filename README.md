@@ -1,3 +1,3 @@
-guy's advance calculator program.
+guy's advanced calculator program.
 
-running should only be preformed via the calculation.py file. the rest are simply helper classes used for proper computing
+running should only be performed via the calculating.py file. the rest are simply helper classes used for proper computing. good luck niri😉
